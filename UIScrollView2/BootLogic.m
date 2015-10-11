@@ -20,14 +20,17 @@
                                     @{TITLE: @"ScrollView Basic",CLASS: @"ScrollViewBasic"},
                                     @{TITLE: @"Content Size",CLASS: @"ContentSize"},
                                     @{TITLE: @"Tap to Zoom",CLASS: @"TapToZoom"},
-                                    @{TITLE: @"Paging ScrollView",CLASS: @"PagingScrollView"}
+                                    @{TITLE: @"Paging ScrollView",CLASS: @"PagingScrollView"},
+                                    
                           ]};
     NSDictionary* intermediate = @{SECTION: @"Lập trình cảm ứng đa chạm", MENU: @[
                                            @{TITLE: @"Tap",CLASS: @"Tap"},
                                            @{TITLE: @"Pan",CLASS: @"Pan"},
                                            @{TITLE: @"Pinch",CLASS: @"Pinch"},
                                            @{TITLE: @"Throw Ball",CLASS: @"ThrowBall"},
-                                           @{TITLE: @"Rotate Ball",CLASS: @"RotateBall"}
+                                           @{TITLE: @"Rotate Ball",CLASS: @"RotateBall"},
+                                           @{TITLE: @"Pan_Swipe_Tap",CLASS: @"Pan_Swipe_Tap"},
+                                           @{TITLE: @"Len Zoom",CLASS: @"lenZoom"}
                                   ]};
     NSDictionary* advanced = @{SECTION: @"NSArray", MENU: @[
                                     @{TITLE: @"CreateArray", CLASS: @"createArray"}

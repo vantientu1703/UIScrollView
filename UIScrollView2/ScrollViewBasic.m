@@ -8,7 +8,7 @@
 
 #import "ScrollViewBasic.h"
 
-@interface ScrollViewBasic () <UIScrollViewDelegate>
+@interface ScrollViewBasic () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (weak, nonatomic) UILabel *scaleZoom;
 @end
@@ -38,6 +38,7 @@
     
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:slider];
     toolBar.items = @[barButton];
+    
     toolBar.frame = CGRectMake(0, self.view.bounds.size.height - toolBar.bounds.size.height,
                                toolBar.bounds.size.width,
                                toolBar.bounds.size.height);
@@ -54,15 +55,21 @@
     self.scrollView.maximumZoomScale = slider.maximumValue;
     
     self.scrollView.zoomScale = slider.value;
-
     [self.view addSubview:self.scrollView];
     
     //self.scaleZoom.text = labelValueScale;
     UIBarButtonItem *barButtton = [[UIBarButtonItem alloc] initWithCustomView:labelValueScale];
     
     [self.navigationItem setRightBarButtonItem:barButtton];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
+    tap.delegate = self;
+    tap.numberOfTapsRequired = 2;
+    [photo addGestureRecognizer:tap];
 }
-
+- (void) onTap: (UITapGestureRecognizer *) tap {
+    
+}
 - (void) onChange: (UISlider*) sender {
     [self.scrollView setZoomScale:sender.value
                          animated:true];
